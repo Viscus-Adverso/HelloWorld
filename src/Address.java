@@ -5,5 +5,5 @@ public class Address {
     String street;
     String city;
     String country;
-    string zipCode;
+    String zipCode;
 }
