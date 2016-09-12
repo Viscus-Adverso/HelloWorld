@@ -4,6 +4,7 @@
 public class Pokemon {
     String species;
     PokemonType type;
+    int level;
     String height;
     String weight;
     String[] moves= new String[4];
