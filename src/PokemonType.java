@@ -11,8 +11,16 @@ public class PokemonType {
         setSecondaryType(newSecondaryType);
     }
 
+    String getMainType() {
+        return mainType;
+    }
+
     void setMtype(String newMType){
         mainType = newMType;
+    }
+
+    String getSecondaryType() {
+        return secondaryType;
     }
 
     void setSecondaryType(String newSecondaryType){
