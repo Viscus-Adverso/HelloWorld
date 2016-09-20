@@ -29,7 +29,7 @@ public class Exercise02 {
                 emailMap.put(e.destination, arr);
 
             }
-            arr.add(e):
+            arr.add(e);
 
 
         }
@@ -38,7 +38,7 @@ public class Exercise02 {
 
         for (Email e : emails) {
             if (!emailMap.containsKey(e.destination)) {
-                emailMap.put(e.destination, new ArrayList<>()):
+                emailMap.put(e.destination, new ArrayList<>());
             }
             emailMap.get(e.destination).add(e);
         }
