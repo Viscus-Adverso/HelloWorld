@@ -9,46 +9,59 @@ public class Person {
 
     static int minimumAge = 18;
 
+    Person() {
+
+    }
+
     Person(String newName, int newAge, boolean newIsAlive) {
      setName(newName);
         setAge(newAge);
         setIsAlive(newIsAlive);
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    void setName(String newName) {
-//        if (isValidName(newName)){
-            name = newName;
-        }
-//    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    int getAge() {
+    public int getAge() {
         return age;
     }
 
-    void setAge(int newAge) {
-        if (newAge >= minimumAge) {
-            age = newAge;
-        }
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    boolean getIsAlive() {
+    public boolean getIsAlive() {
         return isAlive;
     }
 
-    void setIsAlive(boolean newIsAlive) {
-        if (age > 100){
-            isAlive = false;
-        }
-        else {
-            isAlive = newIsAlive;
-        }
+    public void setIsAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     static boolean isValidName(String name) {
         return name.contains (" ");
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", isAlive=" + isAlive +
+                ", balance=" + balance +
+                '}';
     }
 }
