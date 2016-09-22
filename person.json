@@ -1,1 +1,1 @@
-{"age":27,"balance":0.0,"isAlive":true,"name":"Alice  smith"}
+{"people":[{"age":27,"balance":0.0,"isAlive":true,"name":"Alice Smith"},{"age":36,"balance":0.0,"isAlive":true,"name":"Bob Jones"},{"age":45,"balance":0.0,"isAlive":true,"name":"Charlie Brown"}]}

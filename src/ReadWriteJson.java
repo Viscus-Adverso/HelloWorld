@@ -5,18 +5,25 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by Viscus on 9/21/16.
  */
 public class ReadWriteJson {
     public static void main(String[] args) throws IOException {
-        Person p = new Person("Alice  smith", 27, true);
+        ArrayList<Person> people = new ArrayList<>();
+        people.add(new Person("Alice Smith", 27, true));
+        people.add(new Person("Bob Jones", 36, true));
+        people.add(new Person("Charlie Brown", 45, true));
+        PeopleWrapper pw = new PeopleWrapper(people);
+
+
         File f = new File("person.json");
 
         //write json
         JsonSerializer serializer = new JsonSerializer();
-        String json = serializer.serialize(p);
+        String json = serializer.deep(true).serialize(pw);
         FileWriter fw = new FileWriter(f);
         fw.write(json);
         fw.close();
@@ -27,7 +34,7 @@ public class ReadWriteJson {
         char[] contents = new char[fileSize];
         fr.read(contents, 0, fileSize);
         JsonParser parser = new JsonParser();
-        Person p2 = parser.parse(contents, Person.class);
-        System.out.println(p2);
+        PeopleWrapper pw2 = parser.parse(contents, PeopleWrapper.class);
+        System.out.println(pw2);
     }
 }
