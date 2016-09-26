@@ -1,7 +1,7 @@
 /**
  * Created by Viscus on 9/12/16.
  */
-public class Person {
+public class Person implements Comparable {
     String name;
     int age;
     boolean isAlive;
@@ -14,7 +14,7 @@ public class Person {
     }
 
     Person(String newName, int newAge, boolean newIsAlive) {
-     setName(newName);
+        setName(newName);
         setAge(newAge);
         setIsAlive(newIsAlive);
     }
@@ -52,7 +52,7 @@ public class Person {
     }
 
     static boolean isValidName(String name) {
-        return name.contains (" ");
+        return name.contains(" ");
     }
 
     @Override
@@ -63,5 +63,13 @@ public class Person {
                 ", isAlive=" + isAlive +
                 ", balance=" + balance +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Object o) {
+        Person p = (Person) o;
+        return this.name.compareTo(p.name);
+
     }
 }
